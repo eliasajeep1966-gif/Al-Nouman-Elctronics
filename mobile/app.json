@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "إلكترونيات النعمان",
+    "slug": "mobile",
+    "version": "1.0.0",
+    "sdkVersion": "55.0.0",
+    "scheme": "electronics-store",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.electronics.store"
+    },
+    "android": {
+      "package": "com.electronics.store",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "electronics-store"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen", {
+          "backgroundColor": "#1e1b4b",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200
+        }
+      ]
+    ]
+  }
+}
