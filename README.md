@@ -1,47 +1,51 @@
-# إلكترونيات النعمان
+# Al-Nouman Electronics
 
-**إلكترونيات النعمان** هو برنامج لإدارة مخزون ومبيعات متجر إلكترونيات، صُمم لتنظيم حركة البضاعة وحساب نتائج البيع بصورة عملية. يقسم المخزون إلى فئتين مستقلتين: **قطع الغيار** و**الأدوات الإلكترونية**، مع عرض الأرصدة والقيم والنتائج لكل فئة ثم إجمالي المتجر.
+**Al-Nouman Electronics** is a multi-device inventory and accounting system for an electronics store. It centralizes stock operations, sales activity, profit and loss reporting, and cloud-backed data synchronization in a single workflow.
 
-يُسجَّل لكل منتج الاسم والكمية وسعر التكلفة وسعر البيع والأسعار بالدولار والمواصفات. يعتمد التطبيق على سعر صرف دولار قابل للتعديل من الواجهة، ليعرض القيم بالليرة السورية والدولار ويحسب قيمة المخزون والرصيد والأرباح المتوقعة بصورة واضحة.
+The system manages two inventory categories—**spare parts** and **ready-made electronics**—while keeping product quantities, pricing, specifications, sales, losses, and operational history organized and accessible.
 
-| المجال | الوظائف المتاحة |
+| Area | Capabilities |
 |---|---|
-| إدارة المخزون | إضافة المنتجات، تصنيفها إلى قطع غيار أو أدوات إلكترونية، تحديد الكمية والأسعار والمواصفات، والبحث داخل كل فئة. |
-| عمليات البيع والخسارة | تسجيل بيع قطعة واحدة مع إنقاص الكمية تلقائياً، وتسجيل خسارة بخصمها من المخزون وحفظ قيمة التكلفة. |
-| الحسابات | احتساب قيمة المخزون، مجموع المصاريف، الربح المتوقع، وأرباح وخسائر المبيعات شهرياً لكل فئة وللمجموع الكلي. |
-| العملات | حفظ أسعار التكلفة والبيع بالليرة السورية والدولار، مع سعر صرف قابل للتحديث ينعكس على العرض والحسابات. |
-| السجل | تسجيل عمليات الإضافة والبيع والحذف والخسارة مع التاريخ والتصنيف. |
-| النسخ الاحتياطي | تصدير البيانات واستيرادها بصيغة JSON، وتصدير ملفات Excel منفصلة للمنتجات والمبيعات والخسائر. |
+| Inventory | Add, search, organize, and manage products across spare parts and ready-made electronics. |
+| Product details | Store quantities, cost and selling prices, USD values, and product specifications. |
+| Sales and losses | Record sales and losses, automatically adjust stock quantities, and retain a complete operation log. |
+| Financial reporting | Calculate inventory value, operating balance, expected profit, and monthly profit/loss totals per category and for the full store. |
+| Currency handling | Maintain USD-based prices with an editable USD-to-SYP exchange rate for Syrian pound calculations and reporting. |
+| Data portability | Export and restore backups in JSON format and export products, sales, and losses to Excel workbooks. |
 
-## البيانات والمزامنة
+## Multi-Device Synchronization
 
-يحفظ التطبيق نسخة محلية من البيانات على الجهاز، ويرفع التعديلات إلى التخزين السحابي عند إضافة المنتجات أو بيعها أو تسجيل خسارة أو استيراد نسخة احتياطية. عند فتح التطبيق مع اتصال بالإنترنت، يستعيد بيانات المخزون والسجل والخسائر وسعر الصرف من التخزين السحابي. كما تتضمن نسخة الهاتف صفحات لتسجيل الدخول وإنشاء الحساب واستعادة كلمة المرور.
+Changes to inventory, sales, losses, and exchange-rate settings are synchronized through cloud storage. When an authorized user adds, edits, sells, deletes, or records a loss, the updated store data is available across connected devices using the application.
 
-> المزامنة الحالية تعتمد على حفظ التغيير في السحابة واستعادة البيانات عند تشغيل التطبيق؛ وليست اشتراكاً لحظياً يحدّث شاشة كل جهاز فوراً دون إعادة تحميل.
+> The system is designed to keep the team working from the same shared inventory, sales history, loss records, and exchange-rate settings.
 
-## واجهة الاستخدام
+## Approved-User Access
 
-واجهة البرنامج عربية ومن اليمين إلى اليسار، وتضم تبويبات لقطع الغيار والأدوات والأرباح والسجل. يتوفر أيضاً الوضع الداكن، ومشاركة رابط التطبيق، ونقل نسخة البيانات بين الأجهزة عبر تصديرها واستيرادها.
+The mobile application provides account-based access with sign-in, sign-up, password recovery, and session handling. Access can be limited to an approved set of users so that only authorized people can operate the store’s shared data.
 
-| التقنية | الاستخدام |
+## Interfaces
+
+The project includes an Arabic right-to-left web interface and a mobile application. Both provide the core store-management workflow, including inventory actions, financial summaries, history tracking, backups, and settings.
+
+| Technology | Role |
 |---|---|
-| Next.js وReact | واجهة الويب وإدارة التطبيق. |
-| Supabase | التخزين السحابي لبيانات المخزون والسجل والخسائر والإعدادات. |
-| PWA | تثبيت نسخة الويب كتطبيق قابل للاستخدام على الأجهزة المتوافقة. |
-| Expo | تطبيق الهاتف الموجود ضمن مجلد `mobile`. |
+| Next.js and React | Web application interface. |
+| Supabase | Cloud data storage and synchronization. |
+| PWA | Installable web experience on compatible devices. |
+| Expo | Mobile application located in the `mobile` directory. |
 
-## التشغيل محلياً
+## Local Development
 
-تتطلب نسخة الويب Node.js حديثاً. ثبّت الاعتمادات ثم شغّل بيئة التطوير:
+Install dependencies and start the web development server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-ثم افتح `http://localhost:3000` في المتصفح.
+Then open `http://localhost:3000`.
 
-## المالك
+## Owner
 
-**إلكترونيات النعمان**  
+**Al-Nouman Electronics**  
 By **Elias Ajeep**
